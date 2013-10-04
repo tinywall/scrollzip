@@ -6,7 +6,6 @@
 <link rel="stylesheet" type="text/css" href="animate.css">
 <script type="text/javascript">
 $(document).ready(function(){
-    $(document).scrollzipInit();
     $(window).on("load scroll resize", function(){
         $('.section').scrollzip({
             showFunction    : function() { $(this).css("visibility", "visible").addClass('animated bounceInLeft'); },
