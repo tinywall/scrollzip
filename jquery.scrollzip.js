@@ -6,6 +6,9 @@
 * Copyright (c) 2013 Arun David
 */
 (function($){
+    $(window).on("load",function(){
+        $(document).scrollzipInit();
+    });
     $.fn.scrollzipInit=function(){
         $('body').prepend("<div style='position:fixed;top:0px;left:0px;width:0;height:0;' id='scrollzipPoint'></div>" );
     };
