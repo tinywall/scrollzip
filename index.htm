@@ -1,62 +1,117 @@
 <!DOCTYPE html>
 <html>
 <head>
-<script src="jquery-1.10.2.min.js"></script>
+<title>Scroll Zip jQuery plugin / Tinywall </title>
+<script src="lib/jquery-1.10.2.min.js"></script>
 <script src="jquery.scrollzip.js"></script>
-<link rel="stylesheet" type="text/css" href="animate.css">
+<link rel="stylesheet" type="text/css" href="lib/animate.css">
+<link href="lib/prism.css" rel="stylesheet" />
 <script type="text/javascript">
 $(document).ready(function(){
     $(window).on("load scroll resize", function(){
-        $('.section').scrollzip({
+        $('.header').scrollzip({
+            showFunction    : function() { $(this).css("visibility", "visible").addClass('animated bounceInDown'); },
+        });
+        $('.section1,.section3,.section5,.section7').scrollzip({
             showFunction    : function() { $(this).css("visibility", "visible").addClass('animated bounceInLeft'); },
             hideFunction    : function() { $(this).css("visibility", "hidden").removeClass('animated'); },
-            showShift    : 100,
-            //hideShift     : -100,
-            //wholeVisible  : true,
+            showShift       : 50,
+            hideShift       :50,
         });
-        /*$('#content2').scrollzip({
-            showFunction    : function() { alert('a'); },
-            hideFunction    : function() { alert('b'); },
-            wholeVisible    : true,
-            showShift       : -100,
-            //hideShift     : -100
-        });*/
+        $('.section2,.section4,.section6').scrollzip({
+            showFunction    : function() { $(this).css("visibility", "visible").addClass('animated bounceInRight'); },
+            hideFunction    : function() { $(this).css("visibility", "hidden").removeClass('animated'); },
+            showShift       : 50,
+            hideShift       :50,
+        });
     });
 });
 </script>
 <style>
-h1{text-align: center;}
-body{background: #eeeeee;color: #333333;font-family: arial;margin: 0;padding: 0;}
-.container{width: 960px;margin: 50px auto;}
-.section{background: #ffffff;border: 1px solid #aaaaaa;margin-top: 50px;padding: 50px;visibility: hidden;}
+.subtitle{}
+.header{text-align: center;visibility: hidden;}
+.title{font-size:50px;}
+.title,.description{}
+body{background: #eeeeee;color: #333333;font-family: arial;font-size:14px;margin: 0;padding: 0;overflow-x:hidden;}
+.container{width: 800px;margin: 50px auto;max-width:90%;}
+.section{background: #ffffff;border: 1px solid #dddddd;margin-top: 50px;padding: 20px;visibility: hidden;}
 #content,#content2{background:#ddd;height:200px;display:hidden;}
 .t1{width:100px;height:100px;background:#ef8603;margin:20px;visibility:hidden;}
+.highlight{font-weight:bold;}
+.option-table tr{vertical-align:top;}
+table.option-table{border-width: 1px;border-spacing: 0px;border-style: outset;border-color: #f7f7f7;border-collapse: separate;background-color: white;}
+table.option-table th {border-width: 1px;padding: 5px;border-style: inset;border-color: #f7f7f7;background-color: white;}
+table.option-table td {border-width: 1px;padding: 5px;border-style: inset;border-color: #f7f7f7;background-color: white;}
 </style>
 </head>
 <body>
+<a href="https://github.com/tinywall/scrollzip"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png" alt="Fork me on GitHub"></a>
 <div class='container'>
-    <h1>SorollZip</h1>
-    <div class='section'>
-    Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum. Typi non habent claritatem insitam; est usus legentis in iis qui facit eorum claritatem. Investigationes demonstraverunt lectores legere me lius quod ii legunt saepius. Claritas est etiam processus dynamicus, qui sequitur mutationem consuetudium lectorum. Mirum est notare quam littera gothica, quam nunc putamus parum claram, anteposuerit litterarum formas humanitatis per seacula quarta decima et quinta decima. Eodem modo typi, qui nunc nobis videntur parum clari, fiant sollemnes in futurum.
+    <div class='header'>
+        <h1 class='title'>ScrollZip</h1>
+        <div class='description'>jQuery plugin to trigger functions when element/content becomes visibile/hidden while scrolling</div>
     </div>
-    <div class='section'>
-    Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum. Typi non habent claritatem insitam; est usus legentis in iis qui facit eorum claritatem. Investigationes demonstraverunt lectores legere me lius quod ii legunt saepius. Claritas est etiam processus dynamicus, qui sequitur mutationem consuetudium lectorum. Mirum est notare quam littera gothica, quam nunc putamus parum claram, anteposuerit litterarum formas humanitatis per seacula quarta decima et quinta decima. Eodem modo typi, qui nunc nobis videntur parum clari, fiant sollemnes in futurum.
+    
+    <div class='section section1'><h2 class='subtitle'>Intro</h2>
+    Scroll zip is a jQuery plugin that is used <span class='highlight'>to add some event/action/effect to the web elements when it is becoming visibile or hidden while scrolling</span> the web page.
+    This plugin doesn't add any action, It just finds whether the element is coming in to or going out of the visible part of the browser viewport and triggers the function in the showFunction, hideFunction options accordingly.
+                <br/><br/>Here in this demo, I am using the <a href='http://daneden.me/animate/' target='_blank'>Animate.css</a> by <a href='https://twitter.com/_dte' target='_blank'>@_dte</a> for the CSS3 animations.
     </div>
-    <div class='section'>
-    Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum. Typi non habent claritatem insitam; est usus legentis in iis qui facit eorum claritatem. Investigationes demonstraverunt lectores legere me lius quod ii legunt saepius. Claritas est etiam processus dynamicus, qui sequitur mutationem consuetudium lectorum. Mirum est notare quam littera gothica, quam nunc putamus parum claram, anteposuerit litterarum formas humanitatis per seacula quarta decima et quinta decima. Eodem modo typi, qui nunc nobis videntur parum clari, fiant sollemnes in futurum.
-    </div>
-    <div class='section'>
-    Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum. Typi non habent claritatem insitam; est usus legentis in iis qui facit eorum claritatem. Investigationes demonstraverunt lectores legere me lius quod ii legunt saepius. Claritas est etiam processus dynamicus, qui sequitur mutationem consuetudium lectorum. Mirum est notare quam littera gothica, quam nunc putamus parum claram, anteposuerit litterarum formas humanitatis per seacula quarta decima et quinta decima. Eodem modo typi, qui nunc nobis videntur parum clari, fiant sollemnes in futurum.
-    </div>
-    <div class='section'>
-    Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum. Typi non habent claritatem insitam; est usus legentis in iis qui facit eorum claritatem. Investigationes demonstraverunt lectores legere me lius quod ii legunt saepius. Claritas est etiam processus dynamicus, qui sequitur mutationem consuetudium lectorum. Mirum est notare quam littera gothica, quam nunc putamus parum claram, anteposuerit litterarum formas humanitatis per seacula quarta decima et quinta decima. Eodem modo typi, qui nunc nobis videntur parum clari, fiant sollemnes in futurum.
-    </div>
-    <div class='section'>
-    Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum. Typi non habent claritatem insitam; est usus legentis in iis qui facit eorum claritatem. Investigationes demonstraverunt lectores legere me lius quod ii legunt saepius. Claritas est etiam processus dynamicus, qui sequitur mutationem consuetudium lectorum. Mirum est notare quam littera gothica, quam nunc putamus parum claram, anteposuerit litterarum formas humanitatis per seacula quarta decima et quinta decima. Eodem modo typi, qui nunc nobis videntur parum clari, fiant sollemnes in futurum.
-    </div>
-    <div class='section'>
-    Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum. Typi non habent claritatem insitam; est usus legentis in iis qui facit eorum claritatem. Investigationes demonstraverunt lectores legere me lius quod ii legunt saepius. Claritas est etiam processus dynamicus, qui sequitur mutationem consuetudium lectorum. Mirum est notare quam littera gothica, quam nunc putamus parum claram, anteposuerit litterarum formas humanitatis per seacula quarta decima et quinta decima. Eodem modo typi, qui nunc nobis videntur parum clari, fiant sollemnes in futurum.
+                <div class='section section2'><h2 class='subtitle'>Example Usage</h2>
+                Include the jQuery library and the ScrollZip plugin in your web page.
+                <pre class="  language-markup"><code>
+&lt;script src="jquery-1.10.2.min.js"&gt;&lt;/script&gt;
+&lt;script src="jquery.scrollzip.js"&gt;&lt;/script&gt;
+                </code></pre>
+                Now write the function to be called for the elements like the below code,
+                <pre><code class="  language-javascript">
+$(document).ready(function(){
+    $(window).on("load scroll resize", function(){
+        $('element').scrollzip({
+            showFunction    :   function() {
+                                    alert('Element is came into the view.');
+                                },//optional
+            hideFunction    :   function() {
+                                    alert('Element is gone out of the view.');
+                                },//optional
+            wholeVisible    :     false,//optional (default false)
+            showShift       :     100,//optional (default 0)
+            hideShift       :     100,//optional (default 0)
+        });
+    });
+});
+                </code></pre>
+                </div>
+    <div class='section section3'><h2 class='subtitle'>Options</h2>
+        <table class="option-table" border='1'>
+        <tr>
+        <td>showFunction</td>
+        <td>This function is used to write some code to be executed when the given element is becoming visible to user when scrolling. i.e. coming into the visible part of the browser viewport.</td>
+        </tr>
+        <tr>
+        <td>hideFunction</td>
+        <td>Same like showFunction but for the event of the element going out of the visible part of the screen.</td>
+        </tr>
+        <tr>
+        <td>wholeVisible</td>
+        <td>By default, Even when the small part of the element enters/exists the visibile part, the respective function is being called. But if you make wholeVisible to true, When the whole part of the element comes into the visibil area only the function triggers.</td>
+        </tr>
+        <tr>
+        <td>showShift</td>
+        <td>To manually specify the distance after how much px it is into the screen, it should trigger the event. Nagative value to trigger the function for the distance before it is being displayed.</td>
+        </tr>
+        <tr>
+        <td>hideShift</td>
+        <td>Same like showShift but for hiding the element.</td>
+        </tr>
+        </table>
+   </div>
+    <div class='section section4'><h2 class='subtitle'>Disclaimer</h2>
+        Yes, there is already some good old jQuery plugins there for the scenario. But whats wrong? Let this be yet another solution.
+        And by the way I am new to jQuery plugins. So beware, this may be a creepy unoptimised implementation?!.<br/> 
+        But still it works!!.. Isn't that enough?
     </div>
 </div>
+<script src="lib/prism.js"></script>
 </body>
 </html>
