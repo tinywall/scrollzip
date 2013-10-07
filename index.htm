@@ -28,6 +28,7 @@ $(document).ready(function(){
 });
 </script>
 <style>
+a{text-decoration: none;color: #3181CA;}
 .subtitle{}
 .header{text-align: center;visibility: hidden;}
 .title{font-size:50px;}
@@ -43,6 +44,8 @@ table.option-table{border-width: 1px;border-spacing: 0px;border-style: outset;bo
 table.option-table th {border-width: 1px;padding: 5px;border-style: inset;border-color: #f7f7f7;background-color: white;}
 table.option-table td {border-width: 1px;padding: 5px;border-style: inset;border-color: #f7f7f7;background-color: white;}
 .footer{margin-top: 50px;margin-bottom: 50px;text-align: right;}
+.share{margin-top: 20px;}
+.clear{clear: both;}
 </style>
 </head>
 <body>
@@ -51,12 +54,27 @@ table.option-table td {border-width: 1px;padding: 5px;border-style: inset;border
     <div class='header'>
         <h1 class='title'>ScrollZip</h1>
         <div class='description'>jQuery plugin to trigger functions when element/content becomes visibile/hidden while scrolling</div>
+        <div class='share'>
+            <a href="https://twitter.com/share" class="twitter-share-button" data-via="tinywallinfo">Tweet</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+            <a href="https://twitter.com/tinywallinfo" class="twitter-follow-button" data-show-count="false">Follow @Tinywall</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+        <iframe src="http://ghbtns.com/github-btn.html?user=tinywall&repo=scrollzip&type=watch&count=true" height="30" width="118" frameborder="0" scrolling="0" style="width:118px; height: 21px;margin-left:25px;" allowTransparency="true"></iframe>
+        </div>
     </div>
     
     <div class='section section1'><h2 class='subtitle'>Intro</h2>
     Scroll zip is a jQuery plugin that is used <span class='highlight'>to add some event/action/effect to the web elements when it is becoming visibile or hidden while scrolling</span> the web page.
-    This plugin doesn't add any action, It just finds whether the element is coming in to or going out of the visible part of the browser viewport and triggers the function in the showFunction, hideFunction options accordingly.
-                <br/><br/>Here in this demo, I am using the <a href='http://daneden.me/animate/' target='_blank'>Animate.css</a> by <a href='https://twitter.com/_dte' target='_blank'>@_dte</a> for the CSS3 animations.
+    This plugin doesn't actually add any action, It just finds whether the element is coming into or going out of the visible part of the browser viewport and triggers the function in the showFunction, hideFunction part accordingly.
+                <br/><br/>Here in this demo, I am using the <a href='http://daneden.me/animate/' target='_blank'>Animate.css</a> by <a href='https://twitter.com/_dte' target='_blank'>@_dte</a> for the CSS3 animations.<br/><br/>
+                <div style='margin-top:10px;float:left;'>
+                By the way, I am <a href='http://www.arundavid.com/' target='_blank'>Arun David</a>.
+                </div>
+                <div style='margin-top:8px;float:left;'>
+                    &nbsp;&nbsp;&nbsp;<a href="https://twitter.com/ArnDvd" class="twitter-follow-button" data-show-count="false">Follow @ArnDvd</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+                </div>
+                <div class='clear'></div>
     </div>
                 <div class='section section2'><h2 class='subtitle'>Example Usage</h2>
                 Include the jQuery library and the ScrollZip plugin in your web page.
