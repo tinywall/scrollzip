@@ -1,5 +1,5 @@
-scrollzip
-=========
+scrollzip.js
+=============
 
 This jQuery plugin is used to trigger some action if the given element is becoming visible or hidden while scrolling. 
 The given [demo](http://demo.tinywall.net/scrollzip/) is using the [animate.css](http://daneden.me/animate/) for the scroll action animation.
